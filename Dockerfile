@@ -13,9 +13,12 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 
-WORKDIR /data
+WORKDIR /work
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+
+# official nodesource docker image defaults NODE_ENV to 'production'
+ENV NODE_ENV dev
 
 CMD ["bash"]
 
